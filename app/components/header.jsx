@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // コンテンツ名とナビゲーション項目の定義
 const CONTENT_NAME = `Akinori's Portfolio`;
@@ -78,11 +79,20 @@ export default function Header() {
         <div className="flex items-center ml-4">
           <Link
             href="/"
-            className="text-2xl text-azure text-shadow cursor-pointer"
+            className="flex items-center text-2xl text-azure text-shadow cursor-pointer"
           >
-            {CONTENT_NAME}
+            <Image
+              src="/mylogo.svg"
+              width={0}
+              height={0}
+              alt="my-logo"
+              style={{ width: '35px', height: '35px' }}
+              // priority
+            />
+            <span className="ml-2">{CONTENT_NAME}</span>
           </Link>
         </div>
+
         <nav className="ml-auto mr-3">
           <div className="relative">
             <button
