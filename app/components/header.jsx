@@ -73,7 +73,7 @@ export default function Header() {
   );
 
   return (
-    <header className="fixed top-0 w-full bg-white bg-opacity-90 z-50">
+    <header className="fixed top-0 w-full bg-black bg-opacity-90 z-50">
       <div className="flex items-center h-11">
         <div className="flex items-center ml-4">
           <Link
