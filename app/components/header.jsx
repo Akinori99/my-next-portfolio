@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
+// コンテンツ名とナビゲーション項目の定義
 const CONTENT_NAME = `Akinori's Portfolio`;
 const NAV_ITEMS = [
   { href: '/', label: 'TOP' },
@@ -11,15 +12,20 @@ const NAV_ITEMS = [
 ];
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuRef = useRef(null);
-  const buttonRef = useRef(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // メニューの開閉状態を管理
+  const menuRef = useRef(null); // メニューのDOM要素への参照
+  const buttonRef = useRef(null); // メニューボタンのDOM要素への参照
 
+  // メニュー開閉を切り替える関数
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+
+  // メニューを閉じる関数
   const closeMenu = () => setIsMenuOpen(false);
 
+  // メニュー外をクリックしたときにメニューを閉じる処理を設定
   useEffect(() => {
     const handleClickOutside = (event) => {
+      // クリックがメニューおよびメニューボタン外かチェック
       if (
         menuRef.current &&
         !menuRef.current.contains(event.target) &&
@@ -36,6 +42,7 @@ export default function Header() {
     };
   }, []);
 
+  // メニューアイコン
   const MenuIcon = () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -50,6 +57,7 @@ export default function Header() {
     </svg>
   );
 
+  // クローズアイコン
   const CloseIcon = () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
