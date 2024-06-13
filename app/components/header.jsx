@@ -82,12 +82,12 @@ export default function Header() {
             className="flex items-center text-2xl text-azure text-shadow cursor-pointer"
           >
             <Image
-              src="/mylogo.svg"
+              src="/my-logo.png"
               width={0}
               height={0}
               alt="my-logo"
               style={{ width: '35px', height: '35px' }}
-              // priority
+              priority
             />
             <span className="ml-2">{CONTENT_NAME}</span>
           </Link>
