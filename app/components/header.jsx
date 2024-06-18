@@ -89,7 +89,7 @@ export default function Header() {
               style={{ width: '35px', height: '35px' }}
               priority
             />
-            <span className="ml-2">{CONTENT_NAME}</span>
+            <span className="ml-2 text-white">{CONTENT_NAME}</span>
           </Link>
         </div>
 
