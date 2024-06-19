@@ -105,7 +105,7 @@ export default function Header() {
             {isMenuOpen && (
               <div
                 ref={menuRef}
-                className="absolute mt-1.5 right-1 w-31 origin-top-right bg-black bg-opacity-90 border border-white divide-y divide-white rounded-md shadow-lg"
+                className="absolute mt-1 right-1 w-[125px] origin-top-right bg-black bg-opacity-90 border border-white divide-y divide-white rounded-md shadow-lg"
               >
                 <div className="py-1">
                   {NAV_ITEMS.map((item) => (
