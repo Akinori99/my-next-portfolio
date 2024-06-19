@@ -4,8 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// コンテンツ名とナビゲーション項目の定義
-const CONTENT_NAME = `Akinori's Portfolio`;
+// ナビゲーション項目の定義
 const NAV_ITEMS = [
   { href: '/', label: 'TOP' },
   { href: '/works', label: 'WORKS' },
@@ -89,7 +88,7 @@ export default function Header() {
               style={{ width: '35px', height: '35px' }}
               priority
             />
-            <span className="ml-2 text-white">{CONTENT_NAME}</span>
+            <span className="ml-2 text-white">Akinori&apos;s Portfolio</span>
           </Link>
         </div>
 
