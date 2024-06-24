@@ -537,8 +537,8 @@ video {
 .mt-1 {
   margin-top: 0.25rem;
 }
-.mt-10 {
-  margin-top: 2.5rem;
+.mt-20 {
+  margin-top: 5rem;
 }
 .mt-6 {
   margin-top: 1.5rem;
@@ -749,6 +749,16 @@ video {
 
 @media (min-width: 640px) {
 
+  .sm\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .sm\:py-5 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
@@ -764,12 +774,22 @@ video {
 
 @media (min-width: 1024px) {
 
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
   .lg\:text-\[16vw\] {
     font-size: 16vw;
   }
 }
 
 @media (min-width: 1280px) {
+
+  .xl\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
 
   .xl\:text-\[16vw\] {
     font-size: 16vw;
