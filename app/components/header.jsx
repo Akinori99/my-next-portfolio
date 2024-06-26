@@ -81,7 +81,7 @@ export default function Header() {
             className="flex items-center text-2xl text-azure text-shadow cursor-pointer"
           >
             <Image
-              src="/my-logo.jpg"
+              src="/img/my-logo.jpg"
               width={0}
               height={0}
               alt="my-logo"

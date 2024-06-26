@@ -634,6 +634,12 @@ video {
 .to-\[\#0076b3\] {
   --tw-gradient-to: #0076b3 var(--tw-gradient-to-position);
 }
+.bg-cover {
+  background-size: cover;
+}
+.bg-center {
+  background-position: center;
+}
 .fill-current {
   fill: currentColor;
 }
