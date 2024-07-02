@@ -81,12 +81,12 @@ export default function Header() {
             className="flex items-center text-2xl text-azure text-shadow cursor-pointer"
           >
             <Image
-              src="/img/my-logo.jpg"
-              width={0}
-              height={0}
+              src="/img/my-logo.png"
+              width={40}
+              height={40}
               alt="my-logo"
-              style={{ width: '35px', height: '35px' }}
               priority
+              style={{ width: '40px', height: '40px' }}
             />
             <span className="ml-2 text-white">Akinori&apos;s Portfolio</span>
           </Link>
