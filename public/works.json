@@ -1,0 +1,39 @@
+[
+  {
+    "imgSrc": "/img/portfolio.jpg",
+    "title": "ポートフォリオ",
+    "description": "Nuxt.jsによるSPA対応、Vuetifyを用いたヘッダー・フッター作成、GridLayoutとFlexboxを使ったデスクトップファーストのレスポンシブ対応。今までの学習で培った知識を詰め込んだポートフォリオサイトです。",
+    "developmentLanguage": "HTML、SCSS、JavaScript（Vue.js、Nuxt.js）",
+    "siteURL": "※このサイト",
+    "codeURL": "https://github.com/Akinori99/portfolio",
+    "createdDate": "2021/07/03<br/>【更新：2021/07/27】"
+  },
+  {
+    "imgSrc": "/img/todotimer.jpg",
+    "title": "タイマー機能付きToDoリスト",
+    "description": "『基礎から学ぶVue.js』のチュートリアル（ToDoリストを作りながら学習しよう！<※>）を元を作成したToDoリストに、自主的に作成したタイマー機能を付けたものです。",
+    "ReferenceURL": "https://cr-vue.mio3io.com/tutorials/todo.html",
+    "developmentLanguage": "HTML、SCSS、JavaScript（Vue.js）",
+    "siteURL": "https://akinori99.github.io/vuetodo_timer/",
+    "codeURL": "https://github.com/Akinori99/vuetodo_timer",
+    "createdDate": "2021/07/01<br/>【更新：2021/07/27】"
+  },
+  {
+    "imgSrc": "/img/nosmoking.jpg",
+    "title": "禁煙チャレンジ",
+    "description": "指定範囲内でランダムな数値を表示する、禁煙手助けアプリです。ページ下部には禁煙のコツを6秒ごとに表示する、揺れるメッセージチャットを設けています。",
+    "developmentLanguage": "HTML、SCSS、JavaScript（Vue.js）",
+    "siteURL": "https://akinori99.github.io/no_smoking/",
+    "codeURL": "https://github.com/Akinori99/no_smoking",
+    "createdDate": "2021/06/26<br/>【更新：2021/07/27】"
+  },
+  {
+    "imgSrc": "/img/noimg.jpg",
+    "title": "Coming Soon...",
+    "description": "新たに作品が完成したら、こちらに追加していく予定です。",
+    "developmentLanguage": "Coming Soon...",
+    "siteURLnot": "Coming Soon...",
+    "codeURLnot": "Coming Soon...",
+    "createdDate": "Coming Soon..."
+  }
+]
