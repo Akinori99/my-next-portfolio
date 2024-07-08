@@ -526,6 +526,10 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -546,9 +550,6 @@ video {
 }
 .mt-1 {
   margin-top: 0.25rem;
-}
-.mt-20 {
-  margin-top: 5rem;
 }
 .mt-6 {
   margin-top: 1.5rem;
@@ -716,8 +717,20 @@ video {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+.pb-0 {
+  padding-bottom: 0px;
+}
+.pb-64 {
+  padding-bottom: 16rem;
+}
 .pl-4 {
   padding-left: 1rem;
+}
+.pt-20 {
+  padding-top: 5rem;
+}
+.pt-72 {
+  padding-top: 18rem;
 }
 .text-left {
   text-align: left;
