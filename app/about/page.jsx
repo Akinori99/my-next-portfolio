@@ -6,7 +6,7 @@ import WRAPPER from '@/app/components/wrapper';
 import CONTAINER from '@/app/components/container';
 import BUTTON from '@/app/components/button';
 
-export default function About() {
+export default function ABOUT() {
   const [introductionItems, setIntroductionItems] = useState([]);
   const [skillItems, setSkillItems] = useState([]);
 
