@@ -1,16 +1,16 @@
 [
   {
-    "imgSrc": "/images/github.png",
+    "imgSrc": "/img/github.png",
     "name": "gitHub",
     "url": "https://github.com/Akinori99"
   },
   {
-    "imgSrc": "/images/gmail.png",
+    "imgSrc": "/img/gmail.png",
     "name": "gmail",
     "url": "mailto:akinori.work99@gmail.com"
   },
   {
-    "imgSrc": "/images/twitter.png",
+    "imgSrc": "/img/twitter.png",
     "name": "twitter",
     "url": "https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw"
   }
