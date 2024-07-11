@@ -1,0 +1,17 @@
+[
+  {
+    "imgSrc": "/images/github.png",
+    "name": "gitHub",
+    "url": "https://github.com/Akinori99"
+  },
+  {
+    "imgSrc": "/images/gmail.png",
+    "name": "gmail",
+    "url": "mailto:akinori.work99@gmail.com"
+  },
+  {
+    "imgSrc": "/images/twitter.png",
+    "name": "twitter",
+    "url": "https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw"
+  }
+]

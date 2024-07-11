@@ -1,0 +1,20 @@
+[
+  {
+    "imgSrc": "/images/htmlcss.png",
+    "name": "HTML5/CSS3",
+    "rating": "★★★★☆",
+    "description": "基本的なコーディングに加え、GridLayoutやFlexboxによるレスポンシブ対応、Sassを用いたコーディングが可能です。エディタはVisualStudioCodeを使用しております。"
+  },
+  {
+    "imgSrc": "/images/js.png",
+    "name": "JavaScript",
+    "rating": "★★★☆☆",
+    "description": "まだまだ学習途中ですが、データのやり取りやDOM操作などの基本的な操作が可能です。フレームワークは、このポートフォリオでも使用しているVue.jsやNuxt.jsを勉強しております。Node.jsやReact.jsは基礎学習の際に軽く触れました。今後は、TypeScriptにも手を伸ばしていきたいと考えております。"
+  },
+  {
+    "imgSrc": "/images/others.png",
+    "name": "今後学習予定",
+    "rating": "☆☆☆☆☆",
+    "description": "将来的にはフロントエンドだけでなく、バックエンドもこなせるフルスタックエンジニアを目指しているため、サーバーサイド言語のRubyやJAVA、PHP、また、データベースも学習予定です。"
+  }
+]
