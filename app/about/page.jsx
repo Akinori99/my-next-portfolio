@@ -113,8 +113,8 @@ export default function About() {
               <p className="mt-2">※GitHubにて作品のコードを公開中！</p>
             </div>
           </div>
-          <BUTTON href="/works" txt="作品を見る" />
         </CONTAINER>
+        <BUTTON href="/works" txt="作品を見る" />
       </WRAPPER>
     </div>
   );
