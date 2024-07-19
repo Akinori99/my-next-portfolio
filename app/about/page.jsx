@@ -43,8 +43,8 @@ export default function ABOUT() {
               <h1 className="text-5xl font-serif">阿部亮則</h1>
               <p className="text-2xl mt-2">-Abe Akinori-</p>
             </div>
-            <div className="md:col-span-2">
-              <h2 className="text-3xl font-bold">Introduction（自己紹介）</h2>
+            <div className="bg-gray-200 rounded-lg shadow-md p-6 md:col-span-2">
+              <h2 className=" text-3xl font-bold">Introduction（自己紹介）</h2>
               {introductionItems.map((item) => (
                 <p key={item.title} className="mt-4">
                   <span className="font-bold underline">{item.title}</span>
@@ -53,7 +53,7 @@ export default function ABOUT() {
                 </p>
               ))}
             </div>
-            <div className="md:col-span-2">
+            <div className="bg-gray-200 rounded-lg shadow-md p-6 md:col-span-2">
               <h2 className="text-3xl font-bold">Skill（スキル）</h2>
               {skillItems.map((skill) => (
                 <div key={skill.name} className="flex items-center mt-4">
@@ -76,7 +76,7 @@ export default function ABOUT() {
                 </div>
               ))}
             </div>
-            <div className="text-center md:col-span-2">
+            <div className="bg-gray-200 rounded-lg shadow-md p-6 text-center md:col-span-2">
               <h2 className="text-3xl font-bold">Contact（連絡先）</h2>
               <div className="flex justify-center mt-4">
                 <a href="https://github.com/Akinori99" className="mx-2">

@@ -30,7 +30,7 @@ export default function WORKS() {
           {workItems.map((item) => (
             <div
               key={item.title}
-              className="item bg-gray-200 rounded-lg shadow-md p-6"
+              className="bg-gray-200 rounded-lg shadow-md p-6 mt-6"
             >
               <a
                 href={item.siteURL}
