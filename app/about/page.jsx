@@ -8,15 +8,17 @@ import BUTTON from '@/app/components/button';
 
 export default function ABOUT() {
   const [introductionItems, setIntroductionItems] = useState([]);
-  const [skillItems, setSkillItems] = useState([]);
+  const [SKILLITEMs, setSKILLITEMs] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const introductionResponse = await fetch('/introduction.json');
-        const skillsResponse = await fetch('/skills.json');
+        const [introductionResponse, skillsResponse] = await Promise.all([
+          fetch('/introduction.json'),
+          fetch('/skills.json'),
+        ]);
         setIntroductionItems(await introductionResponse.json());
-        setSkillItems(await skillsResponse.json());
+        setSKILLITEMs(await skillsResponse.json());
       } catch (error) {
         console.error('Failed to fetch data:', error);
       }
@@ -43,69 +45,29 @@ export default function ABOUT() {
               <h1 className="text-5xl font-serif">阿部亮則</h1>
               <p className="text-2xl mt-2">-Abe Akinori-</p>
             </div>
-            <div className="bg-gray-200 rounded-lg shadow-md p-6 md:col-span-2">
-              <h2 className=" text-3xl font-bold">Introduction（自己紹介）</h2>
-              {introductionItems.map((item) => (
-                <p key={item.title} className="mt-4">
-                  <span className="font-bold underline">{item.title}</span>
-                  <br />
-                  {item.description}
-                </p>
-              ))}
-            </div>
-            <div className="bg-gray-200 rounded-lg shadow-md p-6 md:col-span-2">
-              <h2 className="text-3xl font-bold">Skill（スキル）</h2>
-              {skillItems.map((skill) => (
-                <div key={skill.name} className="flex items-center mt-4">
-                  <Image
-                    src={skill.imgSrc}
-                    alt={skill.name}
-                    width={64}
-                    height={64}
-                  />
-                  <div className="ml-4">
-                    <p className="font-bold">
-                      {skill.name}
-                      <br />
-                      <span className="text-yellow-600">{skill.rating}</span>
-                    </p>
-                  </div>
-                  <div className="ml-8">
-                    <p>{skill.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <SECTION
+              title="Introduction（自己紹介）"
+              items={introductionItems}
+            />
+            <SECTION title="Skill（スキル）" items={SKILLITEMs} isSkill />
             <div className="bg-gray-200 rounded-lg shadow-md p-6 text-center md:col-span-2">
               <h2 className="text-3xl font-bold">Contact（連絡先）</h2>
               <div className="flex justify-center mt-4">
-                <a href="https://github.com/Akinori99" className="mx-2">
-                  <Image
-                    src="/img/github.png"
-                    alt="GitHub"
-                    width={40}
-                    height={40}
-                  />
-                </a>
-                <a href="mailto:akinori.work99@gmail.com" className="mx-2">
-                  <Image
-                    src="/img/gmail.png"
-                    alt="Gmail"
-                    width={40}
-                    height={40}
-                  />
-                </a>
-                <a
+                <CONTACTICON
+                  href="https://github.com/Akinori99"
+                  src="/img/github.png"
+                  alt="GitHub"
+                />
+                <CONTACTICON
+                  href="mailto:akinori.work99@gmail.com"
+                  src="/img/gmail.png"
+                  alt="Gmail"
+                />
+                <CONTACTICON
                   href="https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw"
-                  className="mx-2"
-                >
-                  <Image
-                    src="/img/twitter.png"
-                    alt="Twitter"
-                    width={40}
-                    height={40}
-                  />
-                </a>
+                  src="/img/twitter.png"
+                  alt="Twitter"
+                />
               </div>
               <p className="mt-4">
                 ※ご連絡はTwitterのDMまたは、Gmailにてお願いいたします。
@@ -117,5 +79,54 @@ export default function ABOUT() {
         <BUTTON href="/works" txt="作品を見る" />
       </WRAPPER>
     </div>
+  );
+}
+
+function SECTION({ title, items, isSkill }) {
+  return (
+    <div className="bg-gray-200 rounded-lg shadow-md p-6 md:col-span-2">
+      <h2 className="text-3xl font-bold">{title}</h2>
+      {items.map((item) => (
+        <div key={item.title || item.name} className="mt-4">
+          {isSkill ? (
+            <SKILLITEM skill={item} />
+          ) : (
+            <>
+              <p>
+                <span className="font-bold underline">{item.title}</span>
+                <br />
+                {item.description}
+              </p>
+            </>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function SKILLITEM({ skill }) {
+  return (
+    <div className="flex items-center">
+      <Image src={skill.imgSrc} alt={skill.name} width={64} height={64} />
+      <div className="ml-4">
+        <p className="font-bold">
+          {skill.name}
+          <br />
+          <span className="text-yellow-600">{skill.rating}</span>
+        </p>
+      </div>
+      <div className="ml-8">
+        <p>{skill.description}</p>
+      </div>
+    </div>
+  );
+}
+
+function CONTACTICON({ href, src, alt }) {
+  return (
+    <a href={href} className="mx-2">
+      <Image src={src} alt={alt} width={40} height={40} />
+    </a>
   );
 }
