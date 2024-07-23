@@ -1,10 +1,5 @@
 import { memo } from 'react';
-import dynamic from 'next/dynamic';
-
-const SkillItem = dynamic(() => import('./SkillItem'), {
-  loading: () => <p>Loading...</p>,
-  ssr: false,
-});
+import SkillItem from './SkillItem';
 
 const Section = ({ title, items, isSkill }) => (
   <div className="bg-gray-200 rounded-lg shadow-md p-6 md:col-span-2">
