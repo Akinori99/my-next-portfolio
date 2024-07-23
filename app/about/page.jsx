@@ -1,10 +1,20 @@
 'use client';
 
-import { useEffect, useState, memo } from 'react';
+import { useEffect, useState, useCallback } from 'react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import WRAPPER from '@/app/components/wrapper';
 import CONTAINER from '@/app/components/container';
 import BUTTON from '@/app/components/button';
+
+const Section = dynamic(() => import('@/app/components/Section'), {
+  loading: () => <p>Loading...</p>,
+  ssr: false,
+});
+const ContactIcon = dynamic(() => import('@/app/components/ContactIcon'), {
+  loading: () => <p>Loading...</p>,
+  ssr: false,
+});
 
 export default function ABOUT() {
   const [introductionItems, setIntroductionItems] = useState([]);
@@ -27,6 +37,10 @@ export default function ABOUT() {
     fetchData();
   }, []);
 
+  const renderSection = useCallback((title, items, isSkill = false) => (
+    <Section title={title} items={items} isSkill={isSkill} />
+  ), []);
+
   return (
     <div>
       <WRAPPER img="about.jpg" title="ABOUT">
@@ -46,8 +60,8 @@ export default function ABOUT() {
               <h1 className="text-5xl font-serif">阿部亮則</h1>
               <p className="text-2xl mt-2">-Abe Akinori-</p>
             </div>
-            <Section title="Introduction（自己紹介）" items={introductionItems} />
-            <Section title="Skill（スキル）" items={skillItems} isSkill />
+            {renderSection("Introduction（自己紹介）", introductionItems)}
+            {renderSection("Skill（スキル）", skillItems, true)}
             <div className="bg-gray-200 rounded-lg shadow-md p-6 text-center md:col-span-2">
               <h2 className="text-3xl font-bold">Contact（連絡先）</h2>
               <div className="flex justify-center mt-4">
@@ -65,52 +79,3 @@ export default function ABOUT() {
     </div>
   );
 }
-
-const Section = memo(({ title, items, isSkill }) => (
-  <div className="bg-gray-200 rounded-lg shadow-md p-6 md:col-span-2">
-    <h2 className="text-3xl font-bold">{title}</h2>
-    {items.map(item => (
-      <div key={item.title || item.name} className="mt-4">
-        {isSkill ? (
-          <SkillItem skill={item} />
-        ) : (
-          <>
-            <p>
-              <span className="font-bold underline">{item.title}</span>
-              <br />
-              {item.description}
-            </p>
-          </>
-        )}
-      </div>
-    ))}
-  </div>
-));
-
-Section.displayName = 'Section';
-
-const SkillItem = memo(({ skill }) => (
-  <div className="flex items-center">
-    <Image src={skill.imgSrc} alt={skill.name} width={64} height={64} />
-    <div className="ml-4">
-      <p className="font-bold">
-        {skill.name}
-        <br />
-        <span className="text-yellow-600">{skill.rating}</span>
-      </p>
-    </div>
-    <div className="ml-8">
-      <p>{skill.description}</p>
-    </div>
-  </div>
-));
-
-SkillItem.displayName = 'SkillItem';
-
-const ContactIcon = memo(({ href, src, alt }) => (
-  <a href={href} className="mx-2">
-    <Image src={src} alt={alt} width={40} height={40} />
-  </a>
-));
-
-ContactIcon.displayName = 'ContactIcon';
