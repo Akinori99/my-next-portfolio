@@ -21,7 +21,7 @@ const WorkItem = ({ item }) => (
       <p className="mb-4">
         {item.description} <br />
         {item.ReferenceURL && (
-          <a href={item.ReferenceURL}>※ {item.ReferenceURL}</a>
+          <a className="mb-4 break-words" href={item.ReferenceURL}>※ {item.ReferenceURL}</a>
         )}
       </p>
       <h3 className="text-xl border-l-4 border-blue-800 pl-4 mb-2">
@@ -31,13 +31,13 @@ const WorkItem = ({ item }) => (
       <h3 className="text-xl border-l-4 border-blue-800 pl-4 mb-2">
         サイトURL
       </h3>
-      <p className="mb-4">
+      <p className="mb-4 break-words">
         <a href={item.siteURL}>{item.siteURL || item.siteURLnot}</a>
       </p>
       <h3 className="text-xl border-l-4 border-blue-800 pl-4 mb-2">
         コード
       </h3>
-      <p className="mb-4">
+      <p className="mb-4 break-words">
         <a href={item.codeURL}>{item.codeURL || item.codeURLnot}</a>
       </p>
       <h3 className="text-xl border-l-4 border-blue-800 pl-4 mb-2">

@@ -648,6 +648,9 @@ video {
   --tw-divide-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-divide-opacity));
 }
+.break-words {
+  overflow-wrap: break-word;
+}
 .rounded-full {
   border-radius: 9999px;
 }
