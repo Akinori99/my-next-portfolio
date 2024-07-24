@@ -4,7 +4,11 @@ export default function WRAPPER({ isTopPage, img, title, children }) {
   return (
     <div
       className="flex flex-col justify-center items-center min-h-screen px-5 bg-cover bg-center bg-fixed"
-      style={{ backgroundImage: `url('/img/${img}')` }}
+      style={{
+        backgroundImage: `url('/img/${img}')`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+      }}
     >
       <div className="text-center leading-none text-azure w-full">
         <h1
