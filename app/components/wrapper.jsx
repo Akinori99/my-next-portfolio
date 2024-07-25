@@ -3,16 +3,17 @@ export default function WRAPPER({ isTopPage, img, title, children }) {
 
   return (
     <div
-      className="flex flex-col justify-center items-center min-h-screen px-5 bg-cover bg-center bg-fixed"
+      className={`flex flex-col justify-center items-center min-h-screen px-5 bg-cover bg-center bg-fixed ${paddingClasses}`}
       style={{
         backgroundImage: `url('/img/${img}')`,
+        backgroundAttachment: 'fixed',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
       }}
     >
       <div className="text-center leading-none text-azure w-full">
         <h1
-          className={`${paddingClasses} text-[16vw] md:text-[16vw] lg:text-[16vw] xl:text-[16vw] max-w-[calc(100vw-10px)] font-normal text-shadow-custom tracking-wide`}
+          className={`text-[16vw] md:text-[16vw] lg:text-[16vw] xl:text-[16vw] max-w-[calc(100vw-10px)] font-normal text-shadow-custom tracking-wide`}
         >
           {title}
         </h1>
