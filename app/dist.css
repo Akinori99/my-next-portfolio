@@ -597,6 +597,9 @@ video {
 .h-9 {
   height: 2.25rem;
 }
+.h-full {
+  height: 100%;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -758,8 +761,8 @@ video {
 .pb-0 {
   padding-bottom: 0px;
 }
-.pb-64 {
-  padding-bottom: 16rem;
+.pb-32 {
+  padding-bottom: 8rem;
 }
 .pl-4 {
   padding-left: 1rem;
@@ -767,8 +770,8 @@ video {
 .pt-20 {
   padding-top: 5rem;
 }
-.pt-72 {
-  padding-top: 18rem;
+.pt-64 {
+  padding-top: 16rem;
 }
 .text-left {
   text-align: left;
