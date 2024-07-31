@@ -60,13 +60,13 @@ export default function ABOUT() {
             <p className="text-2xl mt-2">-Abe Akinori-</p>
           </div>
           <div className="col-span-1">
-            {renderSection("Introduction（自己紹介）", introductionItems)}
+            {renderSection("Introduction", introductionItems)}
           </div>
           <div className="col-span-1">
-            {renderSection("Skill（スキル）", skillItems, true)}
+            {renderSection("Skills", skillItems, true)}
           </div>
           <div className="col-span-1 bg-gray-200 rounded-lg shadow-md p-6 text-center">
-            <h2 className="text-3xl font-bold">Contact（連絡先）</h2>
+            <h2 className="text-3xl font-bold">Contact</h2>
             <div className="flex justify-center mt-4">
               <ContactIcon href="https://github.com/Akinori99" src="/img/github.png" alt="GitHub" />
               <ContactIcon href="mailto:akinori.work99@gmail.com" src="/img/gmail.png" alt="Gmail" />
