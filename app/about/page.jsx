@@ -45,33 +45,35 @@ export default function ABOUT() {
     <div>
       <WRAPPER img="about.jpg" title="ABOUT">
         <CONTAINER>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-            <div className="text-center">
-              <Image
-                src="/img/myface.jpg"
-                alt="myface"
-                width={240}
-                height={240}
-                className="rounded-full border-4 border-black mx-auto"
-                priority
-              />
-            </div>
-            <div className="text-center md:text-left mt-6 md:mt-0">
-              <h1 className="text-5xl font-serif">阿部亮則</h1>
-              <p className="text-2xl mt-2">-Abe Akinori-</p>
-            </div>
+          <div className="col-span-1 text-center">
+            <Image
+              src="/img/myface.jpg"
+              alt="myface"
+              width={240}
+              height={240}
+              className="rounded-full border-4 border-black mx-auto"
+              priority
+            />
+          </div>
+          <div className="col-span-1 text-center flex flex-col items-center justify-center mt-6 md:mt-0">
+            <h1 className="text-5xl font-serif">阿部亮則</h1>
+            <p className="text-2xl mt-2">-Abe Akinori-</p>
+          </div>
+          <div className="col-span-1">
             {renderSection("Introduction（自己紹介）", introductionItems)}
+          </div>
+          <div className="col-span-1">
             {renderSection("Skill（スキル）", skillItems, true)}
-            <div className="bg-gray-200 rounded-lg shadow-md p-6 text-center md:col-span-2">
-              <h2 className="text-3xl font-bold">Contact（連絡先）</h2>
-              <div className="flex justify-center mt-4">
-                <ContactIcon href="https://github.com/Akinori99" src="/img/github.png" alt="GitHub" />
-                <ContactIcon href="mailto:akinori.work99@gmail.com" src="/img/gmail.png" alt="Gmail" />
-                <ContactIcon href="https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw" src="/img/twitter.png" alt="Twitter" />
-              </div>
-              <p className="mt-4">※ご連絡はTwitterのDMまたは、Gmailにてお願いいたします。</p>
-              <p className="mt-2">※GitHubにて作品のコードを公開中！</p>
+          </div>
+          <div className="col-span-1 bg-gray-200 rounded-lg shadow-md p-6 text-center">
+            <h2 className="text-3xl font-bold">Contact（連絡先）</h2>
+            <div className="flex justify-center mt-4">
+              <ContactIcon href="https://github.com/Akinori99" src="/img/github.png" alt="GitHub" />
+              <ContactIcon href="mailto:akinori.work99@gmail.com" src="/img/gmail.png" alt="Gmail" />
+              <ContactIcon href="https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw" src="/img/twitter.png" alt="Twitter" />
             </div>
+            <p className="mt-4">※ご連絡はTwitterのDMまたは、Gmailにてお願いいたします。</p>
+            <p className="mt-2">※GitHubにて作品のコードを公開中！</p>
           </div>
         </CONTAINER>
         <BUTTON href="/works" txt="作品を見る" />
