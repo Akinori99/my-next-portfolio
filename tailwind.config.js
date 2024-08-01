@@ -16,6 +16,14 @@ module.exports = {
         focus:
           '0 0 0 3px rgba(255, 215, 0, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.2)',
       },
+      keyframes: {
+        shimmer: {
+          '100%': { transform: 'translateX(100%)' },
+        },
+      },
+      animation: {
+        shimmer: 'shimmer 2s infinite',
+      },
     },
   },
   plugins: [],

@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 /* カスタムスタイルの追加 */
+@layer base {
+  html,
+  body {
+    @apply bg-gray-50 text-gray-800;
+  }
+}
 .text-shadow-custom {
   text-shadow: 0 0 10px #ff0;
 }
