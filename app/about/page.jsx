@@ -6,19 +6,22 @@ import Image from 'next/image';
 import WRAPPER from '@/app/components/wrapper';
 import CONTAINER from '@/app/components/container';
 import BUTTON from '@/app/components/button';
+import SkeletonSection from '@/app/components/SkeletonSection';
+import SkeletonContactIcon from '@/app/components/SkeletonContactIcon';
 
 const Section = dynamic(() => import('@/app/components/Section'), {
-  loading: () => <p>Loading...</p>,
+  loading: () => <SkeletonSection />,
   ssr: false,
 });
 const ContactIcon = dynamic(() => import('@/app/components/ContactIcon'), {
-  loading: () => <p>Loading...</p>,
+  loading: () => <SkeletonContactIcon />,
   ssr: false,
 });
 
 export default function ABOUT() {
   const [introductionItems, setIntroductionItems] = useState([]);
   const [skillItems, setSkillItems] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,6 +32,7 @@ export default function ABOUT() {
         ]);
         setIntroductionItems(await introductionResponse.json());
         setSkillItems(await skillsResponse.json());
+        setLoading(false);
       } catch (error) {
         console.error('Failed to fetch data:', error);
       }
@@ -60,17 +64,29 @@ export default function ABOUT() {
             <p className="text-2xl mt-2">-Abe Akinori-</p>
           </div>
           <div className="col-span-1">
-            {renderSection("Introduction", introductionItems)}
+            {loading
+              ? <SkeletonSection />
+              : renderSection("Introduction", introductionItems)}
           </div>
           <div className="col-span-1">
-            {renderSection("Skills", skillItems, true)}
+            {loading
+              ? <SkeletonSection />
+              : renderSection("Skills", skillItems, true)}
           </div>
           <div className="col-span-1 bg-gray-200 rounded-lg shadow-md p-6 text-center">
             <h2 className="text-3xl font-bold">Contact</h2>
             <div className="flex justify-center mt-4">
-              <ContactIcon href="https://github.com/Akinori99" src="/img/github.png" alt="GitHub" />
-              <ContactIcon href="mailto:akinori.work99@gmail.com" src="/img/gmail.png" alt="Gmail" />
-              <ContactIcon href="https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw" src="/img/twitter.png" alt="Twitter" />
+              {loading
+                ? Array.from({ length: 3 }).map((_, index) => (
+                    <SkeletonContactIcon key={index} />
+                  ))
+                : (
+                  <>
+                    <ContactIcon href="https://github.com/Akinori99" src="/img/github.png" alt="GitHub" />
+                    <ContactIcon href="mailto:akinori.work99@gmail.com" src="/img/gmail.png" alt="Gmail" />
+                    <ContactIcon href="https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw" src="/img/twitter.png" alt="Twitter" />
+                  </>
+                )}
             </div>
             <p className="mt-4">※ご連絡はTwitterのDMまたは、Gmailにてお願いいたします。</p>
             <p className="mt-2">※GitHubにて作品のコードを公開中！</p>
