@@ -40,7 +40,7 @@ export default function WORKS() {
       <WRAPPER img="works.jpg" title="WORKS">
         <CONTAINER>
           {loading
-            ? Array.from({ length: 6 }).map((_, index) => (
+            ? Array.from({ length: workItems.length || 4 }).map((_, index) => (
                 <SkeletonWorkItem key={index} />
               ))
             : workItems.map(renderWorkItem)}
