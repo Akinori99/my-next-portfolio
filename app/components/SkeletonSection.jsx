@@ -1,12 +1,18 @@
-const SkeletonSection = () => (
-  <div className="p-4 bg-gray-200 animate-pulse rounded-lg">
-    <div className="h-6 bg-gray-300 mb-4 rounded"></div>
-    <div className="space-y-2">
-      {Array.from({ length: 4 }).map((_, index) => (
-        <div key={index} className="h-4 bg-gray-300 rounded"></div>
-      ))}
-    </div>
-  </div>
-);
+const shimmer =
+  'before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent';
 
-export default SkeletonSection;
+export default function SkeletonSection() {
+  return (
+    <div
+      className={`${shimmer} relative overflow-hidden rounded-lg bg-gray-100 shadow-md p-6 mt-6`}
+    >
+      <div className="flex flex-col items-start">
+        <div className="w-1/4 h-8 bg-gray-200 rounded-md mb-4"></div>
+        <div className="w-full h-4 bg-gray-200 rounded-md mb-2"></div>
+        <div className="w-full h-4 bg-gray-200 rounded-md mb-2"></div>
+        <div className="w-3/4 h-4 bg-gray-200 rounded-md mb-2"></div>
+        <div className="w-1/2 h-4 bg-gray-200 rounded-md"></div>
+      </div>
+    </div>
+  );
+}

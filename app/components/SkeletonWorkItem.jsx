@@ -6,16 +6,15 @@ export default function SkeletonWorkItem() {
     <div
       className={`${shimmer} relative overflow-hidden rounded-lg bg-gray-100 shadow-md p-6 mt-6`}
     >
-      <div className="flex items-center">
-        <div className="h-16 w-16 bg-gray-200 rounded-md"></div>
-        <div className="ml-4">
-          <div className="h-4 w-24 bg-gray-200 rounded-md mb-2"></div>
-          <div className="h-4 w-16 bg-gray-200 rounded-md"></div>
-        </div>
+      <div className="flex flex-col items-center">
+        <div className="w-full h-48 bg-gray-200 rounded-md mb-4"></div>
+        <div className="w-3/4 h-6 bg-gray-200 rounded-md mb-2"></div>
+        <div className="w-1/2 h-6 bg-gray-200 rounded-md"></div>
       </div>
-      <div className="mt-4 h-4 w-full bg-gray-200 rounded-md"></div>
-      <div className="mt-2 h-4 w-3/4 bg-gray-200 rounded-md"></div>
-      <div className="mt-2 h-4 w-1/2 bg-gray-200 rounded-md"></div>
+      <div className="mt-4 w-full h-4 bg-gray-200 rounded-md"></div>
+      <div className="mt-2 w-full h-4 bg-gray-200 rounded-md"></div>
+      <div className="mt-2 w-3/4 h-4 bg-gray-200 rounded-md"></div>
+      <div className="mt-2 w-1/2 h-4 bg-gray-200 rounded-md"></div>
     </div>
   );
 }
