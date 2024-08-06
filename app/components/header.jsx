@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
-// ナビゲーション項目の定義
 const NAV_ITEMS = [
   { href: '/', label: 'TOP' },
   { href: '/works', label: 'WORKS' },
@@ -12,20 +12,17 @@ const NAV_ITEMS = [
 ];
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // メニューの開閉状態を管理
-  const menuRef = useRef(null); // メニューのDOM要素への参照
-  const buttonRef = useRef(null); // メニューボタンのDOM要素への参照
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
 
-  // メニュー開閉を切り替える関数
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
-  // メニューを閉じる関数
   const closeMenu = () => setIsMenuOpen(false);
 
-  // メニュー外をクリックしたときにメニューを閉じる処理を設定
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // クリックがメニューおよびメニューボタン外かチェック
       if (
         menuRef.current &&
         !menuRef.current.contains(event.target) &&
@@ -42,7 +39,6 @@ export default function Header() {
     };
   }, []);
 
-  // メニューアイコン
   const MenuIcon = () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +53,6 @@ export default function Header() {
     </svg>
   );
 
-  // クローズアイコン
   const CloseIcon = () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +88,18 @@ export default function Header() {
         </div>
 
         <nav className="ml-auto mr-3">
-          <div className="relative">
+          <div className="hidden md:flex items-center space-x-6">
+            {NAV_ITEMS.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`text-white hover:text-azure transition-opacity duration-300 ${pathname === item.href ? 'opacity-50' : ''}`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+          <div className="md:hidden relative">
             <button
               ref={buttonRef}
               className="flex items-center justify-center h-9 w-9 focus:outline-none"
@@ -111,7 +117,7 @@ export default function Header() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="flex items-center justify-center px-5 py-3 text-white cursor-pointer hover:bg-white hover:text-black"
+                      className={`flex items-center justify-center px-5 py-3 text-white cursor-pointer hover:bg-white hover:text-black transition-opacity duration-300 ${pathname === item.href ? 'opacity-50' : ''}`}
                       onClick={closeMenu}
                     >
                       {item.label}
