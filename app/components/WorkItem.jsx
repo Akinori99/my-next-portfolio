@@ -1,15 +1,14 @@
 'use client';
 
-
-import { memo, useState } from 'react';
+import { memo, useState, useCallback } from 'react';
 import Image from 'next/image';
 
 const WorkItem = ({ item }) => {
   const [showDetails, setShowDetails] = useState(false);
 
-  const toggleDetails = () => {
+  const toggleDetails = useCallback(() => {
     setShowDetails(prev => !prev);
-  };
+  }, []);
 
   return (
     <div className="bg-gray-200 rounded-lg shadow-md p-6 mt-6">
@@ -34,9 +33,7 @@ const WorkItem = ({ item }) => {
             <a className="mb-4 break-words" href={item.ReferenceURL}>※ {item.ReferenceURL}</a>
           )}
         </p>
-        <h3 className="text-xl border-l-4 border-blue-800 pl-4 mb-2">
-          開発言語
-        </h3>
+        <h3 className="text-xl border-l-4 border-blue-800 pl-4 mb-2">開発言語</h3>
         <p className="mb-4">{item.developmentLanguage}</p>
         <button
           onClick={toggleDetails}
@@ -46,21 +43,15 @@ const WorkItem = ({ item }) => {
         </button>
         {showDetails && (
           <>
-            <h3 className="text-xl border-l-4 border-blue-800 pl-4 mb-2">
-              サイトURL
-            </h3>
+            <h3 className="text-xl border-l-4 border-blue-800 pl-4 mb-2">サイトURL</h3>
             <p className="mb-4 break-words">
               <a href={item.siteURL}>{item.siteURL || item.siteURLnot}</a>
             </p>
-            <h3 className="text-xl border-l-4 border-blue-800 pl-4 mb-2">
-              コード
-            </h3>
+            <h3 className="text-xl border-l-4 border-blue-800 pl-4 mb-2">コード</h3>
             <p className="mb-4 break-words">
               <a href={item.codeURL}>{item.codeURL || item.codeURLnot}</a>
             </p>
-            <h3 className="text-xl border-l-4 border-blue-800 pl-4 mb-2">
-              作成日
-            </h3>
+            <h3 className="text-xl border-l-4 border-blue-800 pl-4 mb-2">作成日</h3>
             <p dangerouslySetInnerHTML={{ __html: item.createdDate }}></p>
           </>
         )}

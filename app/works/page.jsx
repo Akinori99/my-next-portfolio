@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, memo } from 'react';
 import dynamic from 'next/dynamic';
 import WRAPPER from '@/app/components/wrapper';
 import CONTAINER from '@/app/components/container';
@@ -12,7 +12,7 @@ const WorkItem = dynamic(() => import('@/app/components/WorkItem'), {
   ssr: false,
 });
 
-export default function WORKS() {
+const WORKS = () => {
   const [workItems, setWorkItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -20,6 +20,9 @@ export default function WORKS() {
     const fetchData = async () => {
       try {
         const response = await fetch('/works.json');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
         const data = await response.json();
         setWorkItems(data);
         setLoading(false);
@@ -31,16 +34,17 @@ export default function WORKS() {
     fetchData();
   }, []);
 
-  const renderWorkItem = useCallback((item) => (
-    <WorkItem key={item.title} item={item} />
-  ), []);
+  const renderWorkItem = useCallback(
+    (item) => <WorkItem key={item.title} item={item} />,
+    []
+  );
 
   return (
     <div>
       <WRAPPER img="works.jpg" title="WORKS">
         <CONTAINER>
           {loading
-            ? Array.from({ length: workItems.length || 4 }).map((_, index) => (
+            ? Array.from({ length: 4 }).map((_, index) => (
                 <SkeletonWorkItem key={index} />
               ))
             : workItems.map(renderWorkItem)}
@@ -49,4 +53,6 @@ export default function WORKS() {
       </WRAPPER>
     </div>
   );
-}
+};
+
+export default memo(WORKS);
