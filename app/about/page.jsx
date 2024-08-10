@@ -29,9 +29,10 @@ export default function ABOUT() {
         ]);
         setIntroductionItems(await introductionResponse.json());
         setSkillItems(await skillsResponse.json());
-        setLoading(false);
       } catch (error) {
         console.error('Failed to fetch data:', error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -61,19 +62,13 @@ export default function ABOUT() {
             <p className="text-2xl mt-2">-Abe Akinori-</p>
           </div>
           <div className="col-span-1">
-            {loading
-              ? <SkeletonSection />
-              : renderSection("Introduction", introductionItems)}
+            {loading ? <SkeletonSection /> : renderSection("Introduction", introductionItems)}
           </div>
           <div className="col-span-1">
-            {loading
-              ? <SkeletonSection />
-              : renderSection("Skills", skillItems, true)}
+            {loading ? <SkeletonSection /> : renderSection("Skills", skillItems, true)}
           </div>
           <div className="col-span-1">
-            {loading
-              ? <SkeletonContactSection />
-              : <ContactSection />}
+            {loading ? <SkeletonContactSection /> : <ContactSection />}
           </div>
         </CONTAINER>
         <BUTTON href="/works" txt="作品を見る" />
