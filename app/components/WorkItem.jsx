@@ -68,13 +68,23 @@ const WorkItem = ({ item }) => {
             className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
             onClick={handleOverlayClick}
           >
-            <div className="relative bg-white rounded-lg shadow-lg p-4 w-11/12 md:w-1/6 lg:w-1/8 z-50">
+            <div className="relative bg-white rounded-lg shadow-lg p-4 w-5/6 md:w-1/6 lg:w-1/8 z-50">
               <button
                 onClick={closeModal}
                 className="absolute bottom-4 right-4 text-gray-500 hover:text-gray-800 text-4xl p-4 bg-white rounded-full"
                 aria-label="Close"
               >
-                ×
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                className="h-8 w-8 fill-current"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
               </button>
               <a
                 href={item.siteURL}
