@@ -1,5 +1,5 @@
 import { Inter } from 'next/font/google';
-import '@/app/dist.css';
+import '@/app/globals.css';
 import Header from '@/app/components/header';
 import Footer from '@/app/components/footer';
 

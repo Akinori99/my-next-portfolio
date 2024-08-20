@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev && postcss app/globals.css -o app/dist.css",
-    "build": "next build && postcss app/globals.css -o app/dist.css",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
