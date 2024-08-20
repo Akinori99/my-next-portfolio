@@ -28,7 +28,7 @@ const WorkItem = ({ item }) => {
   }, [isModalOpen]);
 
   return (
-    <div className="bg-gray-200 rounded-lg shadow-md p-6 mt-6 relative">
+    <div className="bg-gray-200 rounded-lg shadow-md p-8 relative">
       <a
         href={item.siteURL}
         className="block mb-4 w-full relative"
@@ -65,7 +65,7 @@ const WorkItem = ({ item }) => {
               className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
               onClick={handleOverlayClick}
             >
-              <div className="relative bg-white rounded-lg shadow-lg p-4 max-w-[85%] max-h-[calc(100vh-6.5rem)] w-full h-auto z-50 overflow-auto">
+              <div className="relative bg-white rounded-lg shadow-lg p-6 max-w-[85%] max-h-[calc(100vh-6.5rem)] w-full h-auto z-50 overflow-auto">
                 <button
                   onClick={closeModal}
                   className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-3xl p-2 bg-white rounded-full"
@@ -103,7 +103,7 @@ const WorkItem = ({ item }) => {
                 <p className="mb-4 break-words">
                   <a href={item.codeURL}>{item.codeURL || item.codeURLnot}</a>
                 </p>
-                <h3 className="text-lg border-l-4 border-blue-800 pl-4 mb-2">作成日</h3>
+                <h3 className="text-lg border-l-4 border-blue-800 pl-4 mb-2">作成・更新日</h3>
                 <div className="flex items-center justify-between">
                   <p className="flex-1" dangerouslySetInnerHTML={{ __html: item.createdDate }}></p>
                   <button
@@ -127,7 +127,7 @@ const WorkItem = ({ item }) => {
           <p className="mb-4 break-words">
             <a href={item.codeURL}>{item.codeURL || item.codeURLnot}</a>
           </p>
-          <h3 className="text-lg border-l-4 border-blue-800 pl-4 mb-2">作成日</h3>
+          <h3 className="text-lg border-l-4 border-blue-800 pl-4 mb-2">作成・更新日</h3>
           <p dangerouslySetInnerHTML={{ __html: item.createdDate }}></p>
         </div>
       </div>
