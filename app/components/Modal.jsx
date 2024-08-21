@@ -17,7 +17,7 @@ const Modal = ({ isOpen, onClose, item }) => {
       className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
       onClick={handleOverlayClick}
     >
-      <div className="relative bg-white rounded-lg shadow-lg p-6 max-w-[85%] max-h-[calc(100vh-6.5rem)] w-full h-auto z-50 overflow-auto">
+      <div className="relative bg-white rounded-lg shadow-lg p-6 max-w-[85%] max-h-[calc(100vh-6rem)] w-full h-auto z-50 overflow-auto">
         <a
           href={item.siteURL}
           className="block mb-4 w-full relative"
@@ -52,7 +52,7 @@ const Modal = ({ isOpen, onClose, item }) => {
         <div className="flex items-center justify-between">
           <div className="flex flex-col">
             <p className='mb-2'>{item.createdDate}</p>
-            <p className='mb-2'>{item.updateDate}</p>
+            <p>{item.updateDate}</p>
           </div>
           <button
             onClick={onClose}

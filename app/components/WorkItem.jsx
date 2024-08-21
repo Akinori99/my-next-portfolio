@@ -73,7 +73,7 @@ const WorkItem = ({ item }) => {
             <a href={item.codeURL}>{item.codeURL || item.codeURLnot}</a>
           </p>
           <h3 className="text-lg border-l-4 border-blue-800 pl-4 mb-2">作成・更新日</h3>
-          <p>{item.createdDate}</p>
+          <p className='mb-2'>{item.createdDate}</p>
           <p>{item.updateDate}</p>
         </div>
       </div>
