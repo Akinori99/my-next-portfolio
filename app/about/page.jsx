@@ -6,11 +6,11 @@ import Image from 'next/image';
 import WRAPPER from '@/app/components/wrapper';
 import CONTAINER from '@/app/components/container';
 import BUTTON from '@/app/components/button';
-import SkeletonSection from '@/app/components/SkeletonSection';
-import ContactSection from '@/app/components/ContactSection';
-import SkeletonContactSection from '@/app/components/SkeletonContactSection';
+import SkeletonSection from '@/app/components/skeletons/SkeletonSection';
+import ContactSection from '@/app/components/about/ContactSection';
+import SkeletonContactSection from '@/app/components/skeletons/SkeletonContactSection';
 
-const Section = dynamic(() => import('@/app/components/Section'), {
+const Section = dynamic(() => import('@/app/components/about/Section'), {
   loading: () => <SkeletonSection />,
   ssr: false,
 });

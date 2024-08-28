@@ -5,9 +5,9 @@ import dynamic from 'next/dynamic';
 import WRAPPER from '@/app/components/wrapper';
 import CONTAINER from '@/app/components/container';
 import BUTTON from '@/app/components/button';
-import SkeletonWorkItem from '@/app/components/SkeletonWorkItem';
+import SkeletonWorkItem from '@/app/components/skeletons/SkeletonWorkItem';
 
-const WorkItem = dynamic(() => import('@/app/components/WorkItem'), {
+const WorkItem = dynamic(() => import('@/app/components/works/WorkItem'), {
   loading: () => <SkeletonWorkItem />,
   ssr: false,
 });

@@ -1,6 +1,6 @@
 'use client';
 
-import ContactIcon from '@/app/components/ContactIcon';
+import ContactIcon from '@/app/components/about/ContactIcon';
 
 const contactItems = [
   {
