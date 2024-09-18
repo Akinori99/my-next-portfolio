@@ -12,12 +12,7 @@ const contactItems = [
     href: 'mailto:akinori.work99@gmail.com',
     src: '/img/gmail.png',
     alt: 'Gmail',
-  },
-  {
-    href: 'https://twitter.com/Akinori_99?ref_src=twsrc%5Etfw',
-    src: '/img/twitter.png',
-    alt: 'Twitter',
-  },
+  }
 ];
 
 export default function ContactSection() {
@@ -34,7 +29,7 @@ export default function ContactSection() {
           />
         ))}
       </div>
-      <p className="mt-8">※ご連絡はTwitterのDMまたは、Gmailにてお願いいたします。</p>
+      <p className="mt-8">※ご連絡はGmailにてお願いいたします。</p>
       <p className="mt-2">※GitHubにて作品のコードを公開中！</p>
     </div>
   );
