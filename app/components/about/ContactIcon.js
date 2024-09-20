@@ -13,7 +13,6 @@ const ContactIcon = ({ href, src, alt }) => (
       alt={alt}
       width={40}
       height={40}
-      layout="intrinsic"
       priority={false}
     />
   </a>
