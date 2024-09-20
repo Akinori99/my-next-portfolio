@@ -4,8 +4,8 @@
     "title": "ポートフォリオ",
     "description": "Nuxt.jsによるSPA対応、Vuetifyを用いたヘッダー・フッター作成、GridLayoutとFlexboxを使ったデスクトップファーストのレスポンシブ対応。今までの学習で培った知識を詰め込んだポートフォリオサイトです。",
     "developmentLanguage": "HTML、SCSS、JavaScript（Vue.js、Nuxt.js）",
-    "siteURL": "※このサイト",
-    "codeURL": "https://github.com/Akinori99/portfolio",
+    "siteURL": "https://my-next-portfolio-jet.vercel.app",
+    "codeURL": "https://github.com/Akinori99/my-next-portfolio",
     "createdDate": "完成：2021/07/03",
     "updateDate":"更新：2021/07/27"
   },
