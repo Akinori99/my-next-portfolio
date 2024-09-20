@@ -11,9 +11,8 @@ export const metadata = {
     default: `AbeAkinori's_Portfolio`,
   },
   description: `This is AbeAkinori's portfolio website`,
-  metadataBase: new URL(
-    'https://my-next-portfolio-akinori99s-projects.vercel.app'
-  ),
+  metadataBase: 'https://my-next-portfolio-akinori99s-projects.vercel.app',
+
 };
 
 export default function RootLayout({ children }) {
